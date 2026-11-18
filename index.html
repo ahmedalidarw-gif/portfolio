@@ -8,6 +8,11 @@
 <title>Ahmed Ali Darwish — Commercial Analyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website"><meta property="og:url" content="https://ahmedalidarw-gif.github.io/portfolio/"><meta property="og:title" content="Ahmed Ali Darwish — Commercial Analyst">
+<meta property="og:description" content="Commercial analyst with a master data background — pricing intelligence, purchasing decision support, and supply &amp; demand planning across 30,000+ SKUs.">
+<meta property="og:image" content="https://ahmedalidarw-gif.github.io/portfolio/assets/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://ahmedalidarw-gif.github.io/portfolio/assets/og.jpg">
 <style>
 :root{
   --bg:#f5f6f8;--surface:#ffffff;--surface-2:#f9fafb;--ink:#111318;--muted:#667085;--line:#e7e9ee;
@@ -349,18 +354,6 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
 </style>
 <style id="v4">
 /* ===== v4: cursor + mobile ===== */
-/* custom cursor (mouse only) */
-.cur-dot,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;opacity:0;transition:opacity .25s}
-.cur-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--warm)}
-.cur-ring{width:36px;height:36px;margin:-18px 0 0 -18px;border:1.5px solid rgba(36,34,30,.45);display:grid;place-items:center;transition:opacity .25s,width .25s,height .25s,margin .25s,background .25s,border-color .25s}
-.cur-ring span{font-size:11px;font-weight:800;letter-spacing:.06em;color:#fff;opacity:0;transition:opacity .2s}
-.has-cursor .cur-dot,.has-cursor .cur-ring{opacity:1}
-.cur-ring.link{width:56px;height:56px;margin:-28px 0 0 -28px;background:rgba(184,100,60,.10);border-color:var(--warm)}
-.cur-ring.view{width:84px;height:84px;margin:-42px 0 0 -42px;background:var(--ink);border-color:var(--ink)}
-.cur-ring.view span{opacity:1}
-.cur-ring.dark{border-color:rgba(255,255,255,.6)}
-.cur-ring.down{transform:scale(.85)}
-@media (hover:hover) and (pointer:fine){.has-cursor,.has-cursor a,.has-cursor button{cursor:none}}
 
 /* mobile gallery (built by JS) */
 .pj-swipe{display:none}
@@ -416,7 +409,35 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
  .pj-media:hover,.pillar:hover,.tool:hover,.cap:hover{transform:none}
  a:active,button:active{opacity:.75}
 }
-@media (prefers-reduced-motion:reduce){.cur-dot,.cur-ring{display:none}}
+
+/* mobile hero + project collapse */
+.m-avatar,.m-short,.pj-more{display:none}
+@media (max-width:760px){
+ .m-avatar{display:block;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 20%;border:3px solid #fff;box-shadow:0 8px 20px rgba(60,48,30,.15);margin-bottom:14px}
+ .hero-visual{display:none!important}
+ .m-short{display:block}.d-long{display:none}
+ .hero-meta{display:none}
+ .hero{padding:92px 0 40px!important}
+ .pj-more{display:flex;width:100%;justify-content:space-between;align-items:center;padding:13px 0;margin:0 0 6px;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:800 13px var(--font-sans);color:var(--ink);letter-spacing:.02em}
+ .pj-more span{font-size:18px;color:var(--warm)}
+ .pj .pj-list{display:none}
+ .pj.open .pj-list{display:grid;margin-top:10px}
+ .pj-problem{margin-bottom:12px!important}
+}
+
+/* data hover effects */
+.pj-impact{position:relative;padding-right:104px!important}
+.imp-spark{position:absolute;right:14px;top:50%;width:80px;height:26px;transform:translateY(-50%);overflow:visible}
+.imp-spark path,.met-spark path{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s cubic-bezier(.3,.7,.2,1)}
+.imp-spark circle,.met-spark circle{fill:var(--warm);opacity:0;transition:opacity .3s .9s}
+.pj:hover .imp-spark path,.pj.live .imp-spark path,.metric:hover .met-spark path,.metric.live .met-spark path{stroke-dashoffset:0}
+.pj:hover .imp-spark circle,.pj.live .imp-spark circle,.metric:hover .met-spark circle,.metric.live .met-spark circle{opacity:1}
+.metric{position:relative}
+.met-spark{display:block;width:72px;height:22px;margin-top:10px;overflow:visible}
+.met-spark path{stroke:var(--warm);stroke-width:1.6}
+.met-spark circle{fill:var(--accent)}
+.pj-impact{transition:background .3s}.pj:hover .pj-impact{background:#dbe6df}
+@media (prefers-reduced-motion:reduce){.imp-spark path,.met-spark path{transition:none;stroke-dashoffset:0}.imp-spark circle,.met-spark circle{opacity:1}}
 </style>
 </head>
 <body>
@@ -436,9 +457,11 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
 <section class="hero"><div class="spot"></div>
   <div class="container hero-grid">
     <div>
-      <div class="availability"><span class="pulse"></span> Giza, Egypt · <span class="role-tag" id="rotator">Commercial Analyst</span></div>
+      <img class="m-avatar" src="assets/img/portrait.jpg" alt="Ahmed Ali Darwish" width="64" height="64">
+<div class="availability"><span class="pulse"></span> Giza, Egypt · <span class="role-tag" id="rotator">Commercial Analyst</span></div>
       <h1>I turn <span class="grad">messy commerce data</span> into clearer decisions.</h1>
-      <p class="hero-copy">Commercial analyst with a master data and catalog background and hands-on experience in pricing intelligence, purchasing decision support, and supply &amp; demand planning across B2B and B2C e-commerce. I manage a catalog of 30,000+ SKUs and build AI-assisted automation tools that improve data quality, cut manual work, and support data-driven pricing and purchasing decisions.</p>
+      <p class="hero-copy m-short">Commercial analyst with a master data background, managing 30,000+ SKUs and building tools that make pricing and purchasing decisions faster and more accurate.</p>
+<p class="hero-copy d-long">Commercial analyst with a master data and catalog background and hands-on experience in pricing intelligence, purchasing decision support, and supply &amp; demand planning across B2B and B2C e-commerce. I manage a catalog of 30,000+ SKUs and build AI-assisted automation tools that improve data quality, cut manual work, and support data-driven pricing and purchasing decisions.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#work">Explore selected work ↓</a>
         <a class="btn darkghost" href="assets/Ahmed_Ali_Darwish_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -697,7 +720,6 @@ document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',(
 md.addEventListener('click',e=>{if(e.target===md||e.target.classList.contains('md-x'))close()});
 addEventListener('keydown',e=>{if(e.key==='Escape')close()});})();
 </script>
-<div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span>View</span></div>
 <nav class="mbar" aria-label="Quick actions"><a class="pri" href="assets/Ahmed_Ali_Darwish_CV.pdf" target="_blank" rel="noopener">View CV</a><a href="mailto:ahmedalidarw@gmail.com">Email</a><a href="https://linkedin.com/in/ahmedaliwr" target="_blank" rel="noopener">LinkedIn</a></nav>
 <script id="v4js">
 (()=>{
@@ -713,24 +735,24 @@ addEventListener('scroll',()=>{bar.classList.toggle('show',scrollY>hero.offsetHe
 if(typeof PJ!=='undefined')document.querySelectorAll('.pj').forEach(pj=>{
  const id=pj.id.replace('case-',''),p=PJ[id];if(!p)return;
  const w=document.createElement('div');w.className='pj-swipe';
- w.innerHTML='<div class="pj-track">'+p.imgs.map((im,i)=>'<button data-open="'+id+'" data-i="'+i+'" aria-label="Open screen '+(i+1)+'"><img src="'+im[0]+'" alt="'+im[1].replace(/"/g,'&quot;')+'" loading="lazy"></button>').join('')+'</div><div class="pj-dots">'+p.imgs.map((_,i)=>'<i class="'+(i?'':'on')+'"></i>').join('')+'</div>';
+ w.innerHTML='<div class="pj-track">'+p.imgs.map((im,i)=>'<button data-open="'+id+'" data-i="'+i+'" aria-label="Open screen '+(i+1)+'"><img src="'+im[0].replace('.webp','-sm.webp')+'" alt="'+im[1].replace(/"/g,'&quot;')+'" loading="lazy"></button>').join('')+'</div><div class="pj-dots">'+p.imgs.map((_,i)=>'<i class="'+(i?'':'on')+'"></i>').join('')+'</div>';
  pj.insertBefore(w,pj.firstChild);
  const tr=w.querySelector('.pj-track'),dots=[...w.querySelectorAll('.pj-dots i')];
  tr.addEventListener('scroll',()=>{const i=Math.round(tr.scrollLeft/(tr.firstChild.offsetWidth+12));dots.forEach((d,j)=>d.classList.toggle('on',j===i))},{passive:true});
  w.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{document.querySelector('.pj-btn[data-open="'+id+'"]').click();setTimeout(()=>{const t=document.querySelectorAll('#mdThumbs button')[+b.dataset.i];t&&t.click()},30)}));
 });
-/* custom cursor */
-if(!matchMedia('(hover:hover) and (pointer:fine)').matches||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-const dot=document.querySelector('.cur-dot'),ring=document.querySelector('.cur-ring');let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y;
-document.documentElement.classList.add('has-cursor');
-addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;dot.style.transform=`translate(${x}px,${y}px)`;
- const t=e.target;const v=t.closest('.pj-media,.md-thumbs button');const l=!v&&t.closest('a,button,.skill,.tag');
- ring.classList.toggle('view',!!v);ring.classList.toggle('link',!!l);
- ring.classList.toggle('dark',!!t.closest('.contact,.footer,.about-card'))},{passive:true});
-document.addEventListener('mouseleave',()=>document.documentElement.classList.remove('has-cursor'));
-document.addEventListener('mouseenter',()=>document.documentElement.classList.add('has-cursor'));
-addEventListener('mousedown',()=>ring.classList.add('down'));addEventListener('mouseup',()=>ring.classList.remove('down'));
-(function loop(){rx+=(x-rx)*.18;ry+=(y-ry)*.18;ring.style.transform=`translate(${rx}px,${ry}px)`+(ring.classList.contains('down')?' scale(.85)':'');requestAnimationFrame(loop)})();
+/* mobile: collapse project bullets */
+document.querySelectorAll('.pj').forEach(pj=>{const ul=pj.querySelector('.pj-list');if(!ul)return;
+ const t=document.createElement('button');t.className='pj-more';t.type='button';t.innerHTML='What I built <span>+</span>';
+ ul.parentNode.insertBefore(t,ul);t.onclick=()=>{const o=pj.classList.toggle('open');t.querySelector('span').textContent=o?'−':'+'}});
+/* data hover effects */
+const SP=['M0,22 L12,18 L24,20 L36,12 L48,14 L60,6 L72,8 L84,2','M0,20 L12,21 L24,14 L36,16 L48,9 L60,11 L72,4 L84,5','M0,18 L12,12 L24,15 L36,8 L48,10 L60,5 L72,7 L84,1'];
+const spark=(i,cls)=>'<svg class="'+cls+'" viewBox="-2 -2 88 28" aria-hidden="true"><path d="'+SP[i%3]+'" pathLength="1"/><circle cx="84" cy="'+SP[i%3].split(',').pop()+'" r="2.6"/></svg>';
+document.querySelectorAll('.pj-impact').forEach((el,i)=>el.insertAdjacentHTML('beforeend',spark(i,'imp-spark')));
+document.querySelectorAll('.metric').forEach((el,i)=>el.insertAdjacentHTML('beforeend',spark(i+1,'met-spark')));
+const recount=n=>{const end=+n.dataset.count,suf=n.dataset.suffix||'',t0=performance.now();(function f(t){const p=Math.min((t-t0)/900,1);n.textContent=Math.round(end*(1-Math.pow(1-p,3))).toLocaleString('en-US')+suf;if(p<1)requestAnimationFrame(f)})(t0)};
+document.querySelectorAll('.metric').forEach(m=>m.addEventListener('mouseenter',()=>{const n=m.querySelector('[data-count]');n&&recount(n)}));
+if(!matchMedia('(hover:hover)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('live');io.unobserve(e.target)}}),{threshold:.6});document.querySelectorAll('.pj,.metric').forEach(el=>io.observe(el))}
 })();
 </script>
 </body>
