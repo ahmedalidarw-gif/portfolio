@@ -479,16 +479,16 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
 </style>
 <style id="v6">
 /* v6: phone popup close control + consistent project image frames */
-@media (max-width:760px){
+@media (max-width:760px),(max-height:500px){
  /* cap the sheet to the small viewport: its top edge always clears the phone browser toolbar (svh reserves the toolbar area per device instead of a fixed pixel guess) */
  .md-box{max-height:82vh;max-height:calc(100svh - 16px)}
  /* close X pinned at the sheet's visible top, stays on screen while the sheet scrolls */
  .md-x{position:sticky;top:10px;right:auto;z-index:6;margin:0 0 -40px auto;display:grid;place-items:center;background:var(--surface);box-shadow:0 6px 18px rgba(60,48,30,.22)}
  /* every project image gets the same frame height; full image visible, no crop, no distortion */
- .pj-track img{height:min(62vw,340px);max-height:none;object-fit:contain;background:#fff}
+ .pj-track img{height:min(62vw,340px);max-height:none;object-fit:cover!important;object-position:top center;background:#fff}
  /* popup viewer keeps one stable height while switching images */
  .md-main{display:flex;align-items:center;justify-content:center}
- .md-main img{height:min(52vh,380px);max-height:none;object-fit:contain;background:#fff}
+ .md-main img{width:auto;max-width:100%;height:auto;max-height:52vh;object-fit:contain;background:#fff}
 }
 </style>
 </head>
