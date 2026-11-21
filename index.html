@@ -481,7 +481,7 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
 /* v6: phone popup close control + consistent project image frames */
 @media (max-width:760px),(max-height:500px){
  /* cap the sheet to the small viewport: its top edge always clears the phone browser toolbar (svh reserves the toolbar area per device instead of a fixed pixel guess) */
- .md-box{max-height:82vh;max-height:calc(100svh - 16px)}
+ .md-box{max-height:82vh;max-height:calc(100svh - 16px);overflow:auto}
  /* close X pinned at the sheet's visible top, stays on screen while the sheet scrolls */
  .md-x{position:sticky;top:10px;right:auto;z-index:6;margin:0 0 -40px auto;display:grid;place-items:center;background:var(--surface);box-shadow:0 6px 18px rgba(60,48,30,.22)}
  /* every project image gets the same frame height; full image visible, no crop, no distortion */
