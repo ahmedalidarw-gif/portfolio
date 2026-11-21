@@ -477,6 +477,20 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
  .md-main img{max-height:60vh}
 }
 </style>
+<style id="v6">
+/* v6: phone popup close control + consistent project image frames */
+@media (max-width:760px){
+ /* cap the sheet to the small viewport: its top edge always clears the phone browser toolbar (svh reserves the toolbar area per device instead of a fixed pixel guess) */
+ .md-box{max-height:82vh;max-height:calc(100svh - 16px)}
+ /* close X pinned at the sheet's visible top, stays on screen while the sheet scrolls */
+ .md-x{position:sticky;top:10px;right:auto;z-index:6;margin:0 0 -40px auto;display:grid;place-items:center;background:var(--surface);box-shadow:0 6px 18px rgba(60,48,30,.22)}
+ /* every project image gets the same frame height; full image visible, no crop, no distortion */
+ .pj-track img{height:min(62vw,340px);max-height:none;object-fit:contain;background:#fff}
+ /* popup viewer keeps one stable height while switching images */
+ .md-main{display:flex;align-items:center;justify-content:center}
+ .md-main img{height:min(52vh,380px);max-height:none;object-fit:contain;background:#fff}
+}
+</style>
 </head>
 <body>
 <header class="nav-shell" id="navShell">
@@ -541,7 +555,7 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
    </div>
   </div>
   <div class="pillars">
-   <div class="pillar reveal"><span class="pl-k">01</span><h4>Price</h4><p>Competitor benchmarking, margin analysis, and supplier deal evaluation.</p><b>competitors tracked automatically</b></div>
+   <div class="pillar reveal"><span class="pl-k">01</span><h4>Price</h4><p>Competitor benchmarking, margin analysis, and supplier deal evaluation.</p><b>Competitors tracked automatically</b></div>
    <div class="pillar reveal"><span class="pl-k">02</span><h4>Plan</h4><p>Demand forecasts, run-rates, reorder quantities, and safety stock.</p><b>Daily safety-stock refresh for promos</b></div>
    <div class="pillar reveal"><span class="pl-k">03</span><h4>Automate</h4><p>Python, SQL, Excel, Power BI, and AI-assisted tools that remove manual work.</p><b>SKU setup: 30 min → batches in minutes</b></div>
   </div>
@@ -556,7 +570,7 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
   <div class="pj-num">01 · Pricing intelligence</div>
   <h3>Pricing Intelligence Model</h3>
   <p class="pj-problem">Checking our prices against the market meant collecting competitor prices by hand — hours of work, often out of date by the time it was done.</p>
-  <ul class="pj-list"><li>Scrapes prices from the top competitors automatically</li><li>Suggests prices using more than one method and shows where we stand vs. the market</li><li>Flags SKUs priced above market, and SKUs bought above competitors' selling price to trigger supplier negotiation</li></ul>
+  <ul class="pj-list"><li>Scrapes prices from top competitors automatically</li><li>Suggests prices using more than one method and shows where we stand vs. the market</li><li>Flags SKUs priced above market, and SKUs bought above competitors' selling price to trigger supplier negotiation</li></ul>
   <div class="pj-impact"><small>Impact</small>Hours → under 10 minutes</div>
   <div class="pj-tools"><span>Python</span><span>Web Scraping</span><span>HTML / JS</span></div>
   <button class="pj-btn" data-open="pricing">View details &amp; screens <span>→</span></button>
