@@ -351,6 +351,12 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
 @media(max-width:980px){.ab-grid,.pj{grid-template-columns:1fr;gap:28px}.pj.flip .pj-copy{order:0}.pj{padding:28px}.pillars{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr 1fr}.xp-roles,.xp-prev,.sk-grid,.md-grid{grid-template-columns:1fr}.xp-roles .xp-role{border-right:0!important;border-bottom:1px solid var(--line)!important}.xp-roles .xp-role:last-child{border-bottom:0!important}}
 @media(max-width:600px){.tool-grid{grid-template-columns:1fr}.edu-row{grid-template-columns:1fr;gap:2px}.edu-row span{text-align:left}.xp-co,.xp-h{flex-direction:column;align-items:flex-start;gap:4px}.md-box{padding:22px}.pj{padding:20px}}
 .role-tag{color:var(--ink);font-weight:700;border-bottom:1px solid var(--warm)}
+.role-rot{display:inline-grid;vertical-align:bottom}
+.role-item{grid-area:1/1;justify-self:start;white-space:nowrap;opacity:0;transform:translateY(4px);transition:opacity .5s ease,transform .5s ease}
+.role-item.role-on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.role-item{transition:none}}
+@media(max-width:760px){.availability{flex-wrap:wrap;row-gap:4px}.role-sep{display:none}.role-rot{flex-basis:100%}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
 <style id="v4">
 /* ===== v4: cursor + mobile ===== */
@@ -536,7 +542,7 @@ h1,h2,h3,.about-title,.contact h2{font-family:var(--serif);font-weight:500;lette
   <div class="container hero-grid">
     <div>
       <img class="m-avatar" src="assets/img/portrait.jpg" alt="Ahmed Ali Darwish" width="64" height="64">
-<div class="availability"><span class="pulse"></span> Giza, Egypt · <span class="role-tag" id="rotator">Commercial Analyst</span></div>
+<div class="availability"><span class="pulse"></span> Giza, Egypt<span class="role-sep"> · </span><span class="role-rot" id="roleRot" aria-hidden="true"><span class="role-tag role-item role-on">Commercial Analyst</span><span class="role-tag role-item">Master Data &amp; Catalog Specialist</span><span class="role-tag role-item">Supply &amp; Demand Planning</span><span class="role-tag role-item">Product Management</span><span class="role-tag role-item">AI Automation</span></span><span class="sr-only">Commercial Analyst</span></div>
       <h1>Where the business has a <span class="grad">question</span>, I build the answer.</h1>
       <p class="hero-copy m-short">Commercial analyst with a master data background, managing 30,000+ SKUs and building tools that make pricing and purchasing decisions faster and more accurate.</p>
 <p class="hero-copy d-long">Commercial analyst with a master data and catalog background and hands-on experience in pricing intelligence, purchasing decision support, and supply &amp; demand planning across B2B and B2C e-commerce. I manage a catalog of 30,000+ SKUs and build AI-assisted automation tools that improve data quality, cut manual work, and support data-driven pricing and purchasing decisions.</p>
@@ -864,6 +870,20 @@ document.querySelectorAll('.metric').forEach((el,i)=>el.insertAdjacentHTML('befo
 const recount=n=>{const end=+n.dataset.count,suf=n.dataset.suffix||'',t0=performance.now();(function f(t){const p=Math.min((t-t0)/900,1);n.textContent=Math.round(end*(1-Math.pow(1-p,3))).toLocaleString('en-US')+suf;if(p<1)requestAnimationFrame(f)})(t0)};
 document.querySelectorAll('.metric').forEach(m=>m.addEventListener('mouseenter',()=>{const n=m.querySelector('[data-count]');n&&recount(n)}));
 if(!matchMedia('(hover:hover)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('live');io.unobserve(e.target)}}),{threshold:.6});document.querySelectorAll('.pj,.metric').forEach(el=>io.observe(el))}
+})();
+</script>
+<script>
+(()=>{
+const rot=document.getElementById('roleRot');
+if(!rot)return;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const items=[...rot.querySelectorAll('.role-item')];
+let i=0;
+setInterval(()=>{
+ items[i].classList.remove('role-on');
+ i=(i+1)%items.length;
+ items[i].classList.add('role-on');
+},4000);
 })();
 </script>
 </body>
