@@ -922,7 +922,7 @@ const tick=()=>{
  head.data=full.slice(0,++i);
  tail.textContent=full.slice(i);
  if(i<full.length)setTimeout(tick,65+Math.random()*50);
- else setTimeout(()=>caret.remove(),1200);
+ else setTimeout(()=>{caret.style.visibility='hidden';caret.style.animation='none'},1200);
 };
 setTimeout(tick,600);
 })();
